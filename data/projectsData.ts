@@ -1,26 +1,22 @@
 interface Project {
-  title: string,
-  description: string,
-  href?: string,
-  imgSrc?: string,
+  title: string
+  description: string
+  href?: string
+  imgSrc?: string
 }
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'UriBasecamp',
+    description: `Imagine Google Classroom, but for community building and bonding. I learned to set up authentication at the low level, implement version control, and integrate various frameworks. (Database hosting discontinued)`,
+    imgSrc: '/static/images/uribasecamp_display.png',
+    href: 'https://uribasecamp-vercel.vercel.app/',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
+    title: 'In the making...',
+    description: `Stay tuned for my Headstarter Fellowship's team debut.`,
     imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    href: '/',
   },
 ]
 

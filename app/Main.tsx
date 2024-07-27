@@ -2,6 +2,7 @@ import Link from '@/components/Link'
 import ProjectsDisplay from '@/components/ProjectsDisplay'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
+import { useRouter } from 'next/router'
 
 const MAX_DISPLAY = 5
 
@@ -44,7 +45,7 @@ const categories = [
 export default function Home({ posts }) {
   return (
     <div className="space-y-10">
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="h-4/5 divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <p className="font-mono font-bold">&gt; Hello</p>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -56,9 +57,13 @@ export default function Home({ posts }) {
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             I use software engineering to solve problems and build systems that serve us.
           </p>
-          <button className="rounded-xl border-2 border-purple-400 px-12 py-3 font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-purple-200 focus:ring-offset-2">
-            <Link href={'https://www.linkedin.com/in/anthonywillyam/'}>Recruit</Link>
-          </button>
+          <div>
+            <Link href={'https://www.linkedin.com/in/anthonywillyam/'}>
+              <button className="rounded-xl border-2 border-purple-400 px-12 py-3 font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-purple-200 focus:ring-offset-2">
+                Recruit
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 

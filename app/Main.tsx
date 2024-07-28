@@ -6,22 +6,6 @@ import { useRouter } from 'next/router'
 
 const MAX_DISPLAY = 5
 
-const skills = [
-  '💻 Web Development',
-  '🪢 APIs',
-  '🎮 Git',
-  '🛠️ React & Next.js',
-  '⚛️ Node.js',
-  '🗄️ MongoDB',
-  '🦖 PostgreSQL',
-  '📚 MERN Stack',
-  '🪸 Django',
-  '🐍 Python',
-  '📜 Javascript',
-  '⌨️ Typescript',
-  '🎨 Tailwind CSS',
-]
-
 const categories = [
   {
     category: 'Web Development',
@@ -43,6 +27,43 @@ const categories = [
 ]
 
 export default function Home({ posts }) {
+  const skills = [
+    '💻 Web Development',
+    '🪢 APIs',
+    '🎮 Git',
+    '🛠️ React & Next.js',
+    '⚛️ Node.js',
+    '🗄️ MongoDB',
+    '🦖 PostgreSQL',
+    '📚 MERN Stack',
+    '🪸 Django',
+    '🐍 Python',
+    '📜 Javascript',
+    '⌨️ Typescript',
+    '🎨 Tailwind CSS',
+  ]
+
+  const involvements = [
+    {
+      icon: '🌟',
+      title: 'Research',
+      description:
+        "I'm about to embark on a machine learning journey, during which I'd love to be involved in research on campus that is also closely related to another passion of mine, finance!",
+    },
+    {
+      icon: '🌈',
+      title: 'Mentorship',
+      description:
+        "I'm in charge of organizing the Queer Straight Alliance mentorship program for LGBTQ+ university students across Hong Kong. If you're a professional passionate about the cause or an aspiring mentee with inquiries, do reach out!",
+    },
+    {
+      icon: '🤝',
+      title: 'Projects & Internships',
+      description:
+        'Are you working on something cool incorporating machine learning or intersecting the world of finance? We can work together!',
+    },
+  ]
+
   return (
     <div className="space-y-10">
       <div className="h-4/5 divide-y divide-gray-200 dark:divide-gray-700">
@@ -57,10 +78,10 @@ export default function Home({ posts }) {
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             I use software engineering to solve problems and build systems that serve us.
           </p>
-          <div>
+          <div className="py-8">
             <Link href={'https://www.linkedin.com/in/anthonywillyam/'}>
-              <button className="rounded-xl border-2 border-purple-400 px-12 py-3 font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-purple-200 focus:ring-offset-2">
-                Recruit
+              <button className="rounded-xl border-2 border-primary-400 px-12 py-4 font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary-200 focus:ring-offset-2">
+                Connect
               </button>
             </Link>
           </div>
@@ -94,7 +115,7 @@ export default function Home({ posts }) {
             {skills.map((skill, index) => (
               <span
                 key={index}
-                className="mb-2 mr-2 rounded-lg bg-gray-50 px-6 py-4 text-sm font-medium text-gray-800 shadow-md transition duration-300 ease-in-out hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                className="mb-2 mr-2 rounded-lg bg-gray-50 px-6 py-4 text-sm font-medium text-gray-800 shadow-md transition duration-300 ease-in-out hover:bg-gray-100 hover:shadow-primary-400/50 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
               >
                 {skill}
               </span>
@@ -107,37 +128,28 @@ export default function Home({ posts }) {
         <ProjectsDisplay projectsData={projectsData} />
       </div>
 
-      {/* <div className="flex flex-wrap mb-4">
-  <div className="grid sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
-    <div
-      className={
-        'flex flex-col rounded-lg shadow-sm divide-y divide-zinc-600 flex-1 basis-1/3 max-w-xs border'
-      }
-    >
-      <div className="p-6">
-        <h2 className="text-2xl font-semibold leading-6 mb-4">
-          {skills[0]}
+      <div className="max-w-7xl">
+        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
+          Seeking Opportunities
         </h2>
-        <div className="flex flex-wrap">
-          {skills.map((skill, index) => (
-            <span
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {involvements.map((involvement, index) => (
+            <div
               key={index}
-              className="bg-white dark:bg-gray-800 shadow-md rounded-md py-2 px-4 mr-2 mb-2 text-gray-800 dark:text-gray-200 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 ease-in-out"
+              className="flex flex-col items-center rounded-lg bg-gray-100 px-6 py-12 shadow transition duration-300 ease-in-out hover:shadow-primary-400/75 dark:bg-gray-800"
             >
-              {skill}
-            </span>
+              <div className="mb-6 divide-x-4 text-4xl">{involvement.icon}</div>
+              <div className="text-2xl">{involvement.title}</div>
+              <div className="my-4 w-full border-t border-gray-300 dark:border-gray-700"></div>
+              <div className="text-center text-gray-700 dark:text-gray-300">
+                {involvement.description}
+              </div>
+            </div>
           ))}
         </div>
       </div>
-    </div>
-    <div
-      className={
-        'flex flex-col rounded-lg shadow-sm divide-y divide-zinc-600 flex-1 basis-1/3 max-w-xs border border-pink-500'
-      }
-    >
-    </div>
-  </div>
-</div> */}
+
+      <div></div>
     </div>
   )
 }
